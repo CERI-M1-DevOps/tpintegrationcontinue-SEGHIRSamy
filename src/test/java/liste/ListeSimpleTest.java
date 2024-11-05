@@ -270,6 +270,6 @@ class ListeSimpleTest {
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.modifiePremier(3, 4);
-        assertEquals("ListeSimple(2, 1)", listeATester.toString());
+        assertEquals("ListeSimple(Noeud(2),Noeud(1))", listeATester.toString());
     }
 }
