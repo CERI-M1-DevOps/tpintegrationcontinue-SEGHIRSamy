@@ -264,4 +264,12 @@ class ListeSimpleTest {
         listeATester.echanger(noeud, noeud);
         assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
     }
+
+    @Test
+    public void testModifiePremier_ElementNotFound() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.modifiePremier(3, 4);
+        assertEquals("ListeSimple(2, 1)", listeATester.toString());
+    }
 }
