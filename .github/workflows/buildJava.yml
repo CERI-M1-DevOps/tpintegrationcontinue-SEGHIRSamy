@@ -18,3 +18,7 @@ jobs:
           distribution: 'corretto'
       - name: Build avec Maven
         run: mvn -B package
+      - name: SonarCloud Code Quality Analysis
+        env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \ -Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
