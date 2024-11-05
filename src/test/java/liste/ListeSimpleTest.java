@@ -272,4 +272,13 @@ class ListeSimpleTest {
         listeATester.modifiePremier(3, 4);
         assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
     }
+
+    @Test
+    public void testModifiePremier_ElementPresent() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.ajout(3);
+        listeATester.modifiePremier(2, 5);
+        assertEquals("ListeSimple(Noeud(3), Noeud(5), Noeud(1))", listeATester.toString());
+    }
 }
