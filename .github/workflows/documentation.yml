@@ -1,0 +1,29 @@
+name: Genere la documentation
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout depot courant
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'corretto'
+
+      - name: Genere Javadoc
+        run: mvn -B javadoc:javadoc
+
+      - name: Deplois a github
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/apidocs
