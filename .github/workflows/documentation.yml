@@ -19,6 +19,8 @@ jobs:
           java-version: '21'
           distribution: 'corretto'
 
+      - name : test
+        run: mvn clean install -U
       - name: Genere Javadoc
         run: mvn -B javadoc:javadoc
 
