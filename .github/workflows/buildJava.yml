@@ -11,11 +11,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: '${{ github.repository }}'
-      - name: Set up Javaa
+      - name: Set up Java
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'corretto'
+      - name: Cache Maven
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
       - name: Build avec Maven
         run: mvn -B package
       - name: Build and analyze
