@@ -22,7 +22,7 @@ jobs:
       - name : test
         run: mvn clean install -U
       - name: Genere Javadoc
-        run: mvn -B javadoc:javadoc
+        run: mvn -B javadoc::javadoc
 
       - name: Deplois a github
         uses: peaceiris/actions-gh-pages@v4
