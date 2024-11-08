@@ -24,7 +24,7 @@ jobs:
       - name: Genere Javadoc
         run: mvn -B javadoc::javadoc
 
-      - name: Deplois a github
+      - name: Deploy a github
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.DOC }}
