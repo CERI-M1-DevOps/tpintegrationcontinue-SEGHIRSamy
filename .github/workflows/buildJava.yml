@@ -19,7 +19,7 @@ jobs:
           java-version: '21'
           distribution: 'corretto'
 
-      - name: Cache Maven packages
+      - name: Cache Maven
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
