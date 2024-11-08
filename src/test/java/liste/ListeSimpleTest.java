@@ -266,7 +266,7 @@ class ListeSimpleTest {
     }
 
     @Test
-    public void testModifiePremier_ElementNotFound() {
+    void testModifiePremier_ElementNotFound() {
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.modifiePremier(3, 4);
