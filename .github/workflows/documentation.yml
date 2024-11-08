@@ -25,5 +25,5 @@ jobs:
       - name: Deplois a github
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.DOC }}
           publish_dir: ./target/site/apidocs
